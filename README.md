@@ -13,8 +13,6 @@ By the end of Week 2 you should be **lab ready**: fork → Codespace → load `w
 3. Load a **CSV from the course folder**.  
 4. Make a **first plot** with Python; use **GitHub Copilot** if enabled — and **verify** the result (CILO4).
 
-
-
 ## Start here: what is a **repo**?
 
 ### Repository (**repo**) — plain meaning
@@ -25,7 +23,7 @@ A **repo** is a **project folder on the internet** that holds everything for one
 - data files (`.csv`)
 - instructions (`README.md`)
 
-**This week’s repo** is named as `gcap3226_week2`. Your instructor puts materials there; you open it through **your fork** (below).
+**This week’s repo** is named as `GCAP3226_week2`. Your instructor puts materials there; you open it through **your fork** (below).
 
 ### Then: GitHub, fork, Codespace
 
@@ -64,9 +62,9 @@ If you do not have an account yet, create one now at [github.com](https://github
 
 ### Step 2 — Fork the instructor’s Week 2 repo
 
-1. Open the link your instructor shares (e.g. `gcap3226_week2`).  
+1. Open the link your instructor shares (e.g. `GCAP3226_week2`).  
 2. Click **Fork** (top right) → create under **your** username.  
-3. Check the URL: `yourusername/gcap3226_week2` — **your** name must appear.
+3. Check the URL: `yourusername/GCAP3226_week2` — **your** name must appear.
 
 You now have **your own repo** — a copy of the course folder.
 
@@ -74,14 +72,26 @@ You now have **your own repo** — a copy of the course folder.
 
 1. Open **your fork** (not only the instructor’s page).  
 2. Click green **Code** → tab **Codespaces** → **Create codespace on main**.  
-3. Wait for VS Code in the browser (about 1–3 minutes the first time).
+3. **Wait.** The first time often takes **1–3 minutes** (sometimes longer). The page may show “Setting up your codespace” or a loading screen — this is normal. **Do not** expect it to open instantly; do not keep clicking Create.
+
+GitHub will **automatically name** each Codespace (e.g. `cuddly-sniffle` or similar). You do not choose the name.
+
+**Next time you work:** open the **same** Codespace from **Code → Codespaces** (click its name). Reopening is usually **faster** than the first create, but can still take **under a minute to a few minutes**. Do **not** create a new Codespace every class unless the old one was deleted — a new one may need extensions installed again.
 
 ### Step 4 — Open Class 1 notebook
 
 1. Open `W2_S1_github_lab_ready.ipynb`.  
-2. When asked, select kernel **Python 3** .  
-   - In **Codespace**, choose the interpreter at **`/usr/local/bin/python`** (often labelled **Python 3.x.x**).  
+2. Click **Run** on the first cell. When asked to **Select Kernel**:
+   - Choose **Python Environments** (not “Jupyter Kernel”, not “Existing Jupyter Server”).
+   - Then choose **Python 3.12.x** whose path looks like **`/usr/local/.../python`**  
+     (e.g. `/usr/local/bin/python` or `/usr/local/python/3.12.1/bin/python`).
+   - **Do not** choose **+ Create Python Environment** (extra setup students do not need).
+   - If several “Python 3.12.1” lines appear, they are usually the **same course Python** under different paths — pick one under `/usr/local/` and continue.
 3. Run cells from top to bottom.
+
+If Codespace asks to **Install/Enable** Python + Jupyter first, say yes, wait, then:
+
+`Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) → type **Reload Window** → Enter → open the notebook again → Select Kernel as above.
 
 ### Step 5 — Green-light check (lab ready)
 
@@ -112,29 +122,72 @@ Sign in to Copilot in Codespaces. After it suggests code: **run** → **read out
 
 | Problem | What to do |
 |---------|------------|
-| `.ipynb` looks like JSON on GitHub | Open in **Codespaces**, not as raw text on the website |
-| `FileNotFoundError` for CSV | Codespace from **your fork**; file must be inside the repo |
-| `ModuleNotFoundError: pandas` (or matplotlib) | Wait until Codespace **finishes building** (check terminal for `postCreateCommand`). Then in the Codespace terminal run: `pip install -r requirements.txt` → **Restart kernel** → run import again. |
-| Import error **not** `ModuleNotFoundError` (e.g. ipykernel, connection failed, SSL) | See **Kernel / import errors** below |
-| Opened instructor’s repo by mistake | Open **your fork** (`yourusername/gcap3226_week2`) and create Codespace there |
+| `.ipynb` looks like text (actually json) **on the GitHub website** | Do not edit there. Open a **Codespace**, then open the notebook. |
+| `.ipynb` looks like text (actually json) **inside Codespace** | Install extensions (see below), then reload. |
+| Error: `markdown-it-renderer` / Failed to fetch … notebook-out/index.js | Install **Python** + **Jupyter** + **Jupyter Notebook Renderers**, then **Reload Window** (see below). |
+| Prompt: install recommended **Python** extension? | Choose **Yes** (Microsoft). |
+| Error: cannot open … notebook editor type `jupyter-notebook` | Install **Jupyter** (Microsoft), Reload Window, then open the file again (see below). Do **not** choose “Open in Text Editor” for class work. |
+| `FileNotFoundError` for CSV | Codespace from **your fork**; file must be inside the repo. |
+| `ModuleNotFoundError: pandas` (or matplotlib) | Wait until Codespace **finishes building**. Then in the Codespace terminal run: `pip install -r requirements.txt` → **Restart kernel** → run import again. |
+| Import error **not** `ModuleNotFoundError` (e.g. connection failed, SSL) | See **Kernel / import errors** below. |
+| Opened instructor’s repo by mistake | Open **your fork** (`yourusername/GCAP3226_week2`) and create Codespace there. |
+| Lost my Codespace / everything feels new again | You may have created a **new** Codespace. On your fork: **Code → Codespaces** → open the **existing** named one (auto-named, e.g. `cuddly-sniffle`), don’t always click Create. |
+| Codespace is “stuck” loading | Wait **a few minutes**; first setup is slow. If it fails after ~5–10 minutes, refresh once or ask a TA — avoid creating many Codespaces in a row. |
 
-### Kernel / import errors (not ModuleNotFoundError)
+### Notebook shows as JSON, or `markdown-it-renderer` error (in Codespace)
 
-1. **Confirm where you are running**  
-   - **Intended:** GitHub → your fork → **Codespaces** → open notebook.  
-   - **Problem setups:** Colab kernel, or local Python without course packages.
+1. Click **Extensions** (four squares on the left).  
+2. Install (publisher: **Microsoft**):
+   - **Python**
+   - **Jupyter**
+   - **Jupyter Notebook Renderers**  
+3. If Codespace asks *Install the recommended Python extension?* → **Yes**.  
+4. Press `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) → run **Developer: Reload Window**.  
+5. Close the notebook tab → open `W2_S1_github_lab_ready.ipynb` again.  
+6. If it is still JSON: right-click the file → **Open With…** → **Jupyter Notebook**.  
+7. Still broken? `Ctrl/Cmd+Shift+P` → **Codespaces: Rebuild Container** (wait a few minutes), then try steps 5–6 again.
 
-2. **Pick the right kernel**  
-   - Top right of notebook → **Select Kernel** → **Python Environments** → **`/usr/local/bin/python`** (Codespace).  
-   - Avoid kernels named **Colab**, **base (conda)** on your laptop.
+### Error: cannot open resource with notebook editor type `jupyter-notebook`
 
-3. **Install packages manually (Codespace terminal)**  
-   ```bash
-   pip install -r requirements.txt
-   ```  
-   Then: **Kernel → Restart Kernel** → run `import pandas` again.
+1. Click **Cancel** (do **not** use **Open in Text Editor** for labs).  
+2. Extensions → install **Jupyter** (Microsoft). Also install **Python** and **Jupyter Notebook Renderers** if missing.  
+3. Wait until status bar shows extensions finished installing.  
+4. `Ctrl/Cmd+Shift+P` → **Developer: Reload Window**.  
+5. Open the `.ipynb` again.  
+6. If still blocked: `Ctrl/Cmd+Shift+P` → **Codespaces: Rebuild Container**.
 
-4. **Still failing?** Copy the **full red error message** (first line matters) and ask your instructor or TA.
+| Confused by many Python 3.12 options when selecting kernel | Choose **Python Environments** → a **Python 3.12** under **`/usr/local/`**. Skip **Create Python Environment**. See below. |
+
+### Where is “Reload Window”?
+
+1. Press **`Ctrl+Shift+P`** (Windows/Linux) or **`Cmd+Shift+P`** (Mac).  
+2. A search box appears at the top.  
+3. Type **`Reload Window`**.  
+4. Click **Developer: Reload Window**.
+
+There is usually **no** big “Reload” button on the screen — it is always via this command palette.
+
+### Select Kernel — what students usually see
+
+**First screen (3 choices):**
+
+| Option | What to do |
+|--------|------------|
+| **Python Environments** | **Choose this** (normal for our course). |
+| **Jupyter Kernel** | Skip unless an instructor tells you otherwise. |
+| **Existing Jupyter Server** | Skip (advanced; not for this class). |
+
+**Second screen (several Pythons):**
+
+| Option | What to do |
+|--------|------------|
+| **+ Create Python Environment** | **Do not choose** — creates a new empty environment; packages may be missing. |
+| **Python 3.12.x … `/usr/local/...`** | **Choose this** (any `/usr/local/` Python 3.12 line is fine). |
+| **Python 3.12.x … `~/.python/current/...`** | Also OK if `/usr/local/` is not listed; often the same Codespace Python. |
+
+Why so many? Codespace lists **every Python it finds**. They look different but often point to the **same** course setup. Students will see this; it is normal.
+
+After choosing, Run again. If `import pandas` fails, run `pip install -r requirements.txt` in the terminal, then **Restart Kernel** and retry.
 
 
 ---

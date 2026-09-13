@@ -3,7 +3,7 @@
 **Purpose:** practise steering an AI agent on a real public document, then verifying the output.  
 
 **Tool:** GitHub Copilot in Codespaces only  
-**Input (already in the repo):** `docs/policy-full_en.pdf`  
+**Input (already in the repo):** `W2_S3_text_summary/policy-full_en.pdf/policy-full_en.pdf`  
 **Document:** *The Chief Executive’s 2025 Policy Address* — *Deepening Reforms for Our People; Leveraging Our Strengths for a Brighter Future* (public copy for class use; check the PDF cover for the official source)  
 **Output:** one simple **interactive HTML** page that summarises **policy priorities** (by theme), with sources you can check  
 **Not graded** — practice for CILO4: think → check → verify  
@@ -50,7 +50,7 @@ Use these **four principles**. Then **modify the example prompts** below.
 1. **Define the role clearly**
   Say who Copilot should act as, and who the page is for. If you know the goal but not the details, tell it to **ask you questions one by one**, and to **say why** each question matters, until your intention is clear enough to start.
 2. **Use input–process–output to define the task**
-  - **Input:** which file (`docs/policy-full_en.pdf`), not general knowledge. 
+  - **Input:** which file (`W2_S3_text_summary/policy-full_en.pdf/policy-full_en.pdf`), not general knowledge. 
   - **Process:** what to do (e.g. start from Contents; group priorities by theme; do not invent). 
   - **Output:** what to build (here: one simple interactive HTML page you can open and check).
 3. **Verification instruction**
@@ -64,7 +64,7 @@ Use these **four principles**. Then **modify the example prompts** below.
 
 **If you are not ready to specify everything yet:**
 
-> I want a simple interactive HTML summary of `/workspaces/GCAP3226_week2/W2_S3_text_summary/policy-full_en.pdf` for a GE student. Before you build, ask me questions **one by one**, and say **why** you are asking each question, until my intention is clear enough.
+> I want a simple interactive HTML summary of `/W2_S3_text_summary/policy-full_en.pdf` for a GE student. Before you build, ask me questions **one by one**, and say **why** you are asking each question, until my intention is clear enough.
 
 **First build prompt:**
 >

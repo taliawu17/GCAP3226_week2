@@ -1,6 +1,6 @@
 # Copilot for documents
 
-**Purpose:** practise steering an AI agent on a real public document, then verifying the product — not producing a perfect Policy Address summary.  
+**Purpose:** practise steering an AI agent on a real public document, then verifying the output.  
 
 **Tool:** GitHub Copilot in Codespaces only  
 **Input (already in the repo):** `docs/policy-full_en.pdf`  

@@ -3,7 +3,7 @@
 **Purpose:** practise steering an AI agent on a real public document, then verifying the output.  
 
 **Tool:** GitHub Copilot in Codespaces only  
-**Input (already in the repo):** `W2_S3_text_summary/policy-full_en.pdf/policy-full_en.pdf`  
+**Input (already in the repo):** `W2_S3_text_summary/policy-full_en.pdf`  
 **Document:** *The Chief Executive’s 2025 Policy Address* — *Deepening Reforms for Our People; Leveraging Our Strengths for a Brighter Future* (public copy for class use; check the PDF cover for the official source)  
 **Output:** one simple **interactive HTML** page that summarises **policy priorities** (by theme), with sources you can check  
 **Not graded** — practice for CILO4: think → check → verify  

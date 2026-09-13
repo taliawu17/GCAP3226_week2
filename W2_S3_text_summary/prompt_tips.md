@@ -50,7 +50,7 @@ Use these **four principles**. Then **modify the example prompts** below.
 1. **Define the role clearly**
   Say who Copilot should act as, and who the page is for. If you know the goal but not the details, tell it to **ask you questions one by one**, and to **say why** each question matters, until your intention is clear enough to start.
 2. **Use input–process–output to define the task**
-  - **Input:** which file (`W2_S3_text_summary/policy-full_en.pdf/policy-full_en.pdf`), not general knowledge. 
+  - **Input:** which file (`W2_S3_text_summary/policy-full_en.pdf`), not general knowledge. 
   - **Process:** what to do (e.g. start from Contents; group priorities by theme; do not invent). 
   - **Output:** what to build (here: one simple interactive HTML page you can open and check).
 3. **Verification instruction**

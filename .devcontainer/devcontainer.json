@@ -1,6 +1,8 @@
 {
   "name": "GCAP3226 Week 2",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "postCreateCommand": "pip install -r requirements.txt",
   "customizations": {
     "vscode": {
@@ -15,10 +17,5 @@
         "notebook.output.textLineLimit": 100
       }
     }
-  }
-}
-{
-  "build": {
-    "dockerfile": "Dockerfile"
   }
 }

@@ -10,6 +10,8 @@
 
 ---
 
+
+
 ## 0. What an AI agent (here: Copilot) can do
 
 In this lab, GitHub Copilot is not only a **chatbot** that answers in words. In Codespaces it can act more like an **agent**: it takes your request, uses files in the repo (e.g. the PDF), and **creates or edits files** for you — such as writing a full `.html` page you can open and click.
@@ -27,6 +29,8 @@ In this lab, GitHub Copilot is not only a **chatbot** that answers in words. In 
 
 ---
 
+
+
 ## 1. Class steps
 
 1. Open `docs/policy-full_en.pdf`. Skim the **Contents** (chapter list).
@@ -37,32 +41,48 @@ In this lab, GitHub Copilot is not only a **chatbot** that answers in words. In 
 
 ---
 
-## 2. Prompt-writing tips - then write your own prompts
 
-Consider these **points** when you write prompts.
 
-**A. Role + task**  
-Say what you want: e.g. *read this PDF’s Contents; summarise policy priorities for a GE student.*
+## 2. Prompt-writing tips — then write your own prompts
 
-**B. Point to the file**  
-Name the path: `docs/policy-full_en.pdf`. Ask Copilot to use **that** file (not “general knowledge about Hong Kong”).
+Use these **four principles**. Then **modify the example prompts** below.
 
-**C. Scope for a long PDF**  
-Start with **Contents / chapter titles**, then optionally **one chapter**. Say: *Do not invent measures that are not in the Contents or the sections I name.*
+1. **Define the role clearly**
+  Say who Copilot should act as, and who the page is for. If you know the goal but not the details, tell it to **ask you questions one by one**, and to **say why** each question matters, until your intention is clear enough to start.
+2. **Use input–process–output to define the task**
+  - **Input:** which file (`docs/policy-full_en.pdf`), not general knowledge. 
+  - **Process:** what to do (e.g. start from Contents; group priorities by theme; do not invent). 
+  - **Output:** what to build (here: one simple interactive HTML page you can open and check).
+3. **Verification instruction**
+  Tell Copilot what to do when unsure: flag the gap and **prefer asking back over guessing**.
+4. **After the first answer**
+  Open the page, check 2–3 bullets in the PDF, then send a short follow-up: remove, rewrite, or add a chapter cue.
 
-**D. Output shape**  
-Ask for: themes as tabs/sections; 3–6 bullets each; each bullet with a **chapter or paragraph cue** for checking; footer caution (not official advice; summary only).
 
-**E. Interactive HTML**  
-Ask for a single `.html` file with simple buttons/tabs and a **search box** (plain HTML + CSS + a little JS is enough). No need for a server.
 
-**F. Verification instruction**  
-Add: *Flag any point you are unsure about; prefer omission over guessing.*
+### Example prompts
 
-**G. After the first answer**  
-Second prompt: *Here is a bullet I cannot find in the PDF — remove or rewrite it:* …
+**If you are not ready to specify everything yet:**
+
+> I want a simple interactive HTML summary of `/workspaces/GCAP3226_week2/W2_S3_text_summary/policy-full_en.pdf` for a GE student. Before you build, ask me questions **one by one**, and say **why** you are asking each question, until my intention is clear enough.
+
+**First build prompt:**
+>
+> **Input:** use only `policy-full_en.pdf`. Start from the Contents / chapter titles. Do not use general knowledge about Hong Kong.
+>
+> **Process:** summarise policy priorities by theme. Each bullet must be checkable against the PDF. Do not invent measures that are not in the Contents or the sections I name.
+>
+> **Output:** one interactive HTML file at `output/policy_priorities.html` — tabs or buttons by theme; 3–6 bullets per theme; each bullet with a chapter or section cue; a search box; a footer caution (summary only; not official advice). Plain HTML + CSS + a little JS is enough.
+>
+> If anything is unclear, ask me back and say why. Prefer asking back over guessing.
+
+**After the first answer:**
+
+> I cannot find this bullet in the PDF: “[paste the sentence]”. Remove it or rewrite it using only the PDF, and add a chapter cue.
 
 ---
+
+
 
 ## 3. What “good enough” looks like
 
@@ -72,6 +92,8 @@ Second prompt: *Here is a bullet I cannot find in the PDF — remove or rewrite 
 - A clear caution: a summary of a public document; **not** government advice; do not overclaim.
 
 ---
+
+
 
 ## 4. Safety / academic honesty
 

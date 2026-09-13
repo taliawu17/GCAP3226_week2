@@ -64,7 +64,7 @@ Use these **four principles**. Then **modify the example prompts** below.
 
 **If you are not ready to specify everything yet:**
 
-> I want a simple interactive HTML summary of `/W2_S3_text_summary/policy-full_en.pdf` for a GE student. Before you build, ask me questions **one by one**, and say **why** you are asking each question, until my intention is clear enough.
+> I want a simple interactive HTML summary of `/W2_S3_text_summary` for a GE student. Before you build, ask me questions **one by one**, and say **why** you are asking each question, until my intention is clear enough.
 
 **First build prompt:**
 >
